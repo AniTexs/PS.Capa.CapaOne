@@ -102,7 +102,7 @@
         PSData = @{
 
             # Tags applied to this module. These help with module discovery in online galleries.
-            Tags         = @('API','CapaSystems','CapaOne','MDM','PowerShell','Endpoint Management')
+            Tags         = @('API','CapaSystems','CapaOne','MDM','PowerShell','Endpoint','Enrollment')
 
             # A URL to the license for this module.
             # LicenseUri = ''
