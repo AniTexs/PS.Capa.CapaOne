@@ -1,4 +1,14 @@
 function Get-CapaOneUser {
+    <#
+    .SYNOPSIS
+    Retrieves users from CapaOne.
+    .DESCRIPTION
+    Queries the user management endpoint optionally filtering by name.
+    .PARAMETER Name
+    Name or pattern used to filter results.
+    .EXAMPLE
+    PS> Get-CapaOneUser -Name 'John'
+    #>
     [CmdletBinding()]
     param (
         [Parameter()]

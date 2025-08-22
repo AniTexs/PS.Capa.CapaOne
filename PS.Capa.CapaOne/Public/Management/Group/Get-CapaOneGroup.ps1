@@ -1,4 +1,18 @@
 function Get-CapaOneGroup {
+    <#
+    .SYNOPSIS
+    Retrieves groups from CapaOne.
+    .DESCRIPTION
+    Queries group information, optionally filtering by name or ID and including device assignments.
+    .PARAMETER Name
+    Filter groups by name.
+    .PARAMETER GroupId
+    Filter by a specific group ID.
+    .PARAMETER WithDevices
+    Include device assignments in the result.
+    .EXAMPLE
+    PS> Get-CapaOneGroup -WithDevices
+    #>
     [CmdletBinding()]
     param (
         [string]

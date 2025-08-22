@@ -1,4 +1,14 @@
 function Get-CapaOneMDMAppleEndpoint {
+    <#
+    .SYNOPSIS
+    Retrieves Apple MDM endpoints.
+    .DESCRIPTION
+    Queries Apple endpoints filtered by device type.
+    .PARAMETER Type
+    Device type to filter (Mobile or Mac).
+    .EXAMPLE
+    PS> Get-CapaOneMDMAppleEndpoint -Type Mobile
+    #>
     [CmdletBinding()]
     param (
         [Parameter()]
