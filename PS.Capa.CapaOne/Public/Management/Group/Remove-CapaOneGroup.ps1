@@ -1,4 +1,14 @@
 function Remove-CapaOneGroup {
+    <#
+    .SYNOPSIS
+    Removes a CapaOne group.
+    .DESCRIPTION
+    Deletes a group by its identifier with confirmation support.
+    .PARAMETER GroupId
+    Identifier of the group to remove.
+    .EXAMPLE
+    PS> Remove-CapaOneGroup -GroupId 1 -Confirm:$false
+    #>
     [CmdletBinding(
         SupportsShouldProcess = $true,   # ⇒ adds –Confirm / –WhatIf
         ConfirmImpact = 'High' # default; use High for risky ops

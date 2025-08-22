@@ -1,4 +1,14 @@
 function Connect-CapaOne {
+    <#
+    .SYNOPSIS
+    Establishes a session with the CapaOne service.
+    .DESCRIPTION
+    Authenticates to CapaOne using the supplied credentials and stores the session for future requests.
+    .PARAMETER Credential
+    User credential used for authentication.
+    .EXAMPLE
+    PS> Connect-CapaOne -Credential (Get-Credential)
+    #>
     [CmdletBinding()]
     param (
         [Parameter(Mandatory)]

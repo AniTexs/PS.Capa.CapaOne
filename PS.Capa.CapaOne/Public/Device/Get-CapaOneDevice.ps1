@@ -1,4 +1,16 @@
 function Get-CapaOneDevice {
+    <#
+    .SYNOPSIS
+    Retrieves devices from CapaOne.
+    .DESCRIPTION
+    Gets device inventory, optionally filtering by name or type.
+    .PARAMETER Name
+    Device name used to filter results.
+    .PARAMETER Type
+    Device type to filter (Laptop, Desktop, Virtual).
+    .EXAMPLE
+    PS> Get-CapaOneDevice -Name "PC01"
+    #>
     [CmdletBinding()]
     param (
         [string]

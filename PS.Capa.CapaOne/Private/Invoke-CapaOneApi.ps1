@@ -1,4 +1,24 @@
 function Invoke-CapaOneApi {
+    <#
+    .SYNOPSIS
+    Sends a request to the CapaOne REST API.
+    .DESCRIPTION
+    Wraps Invoke-RestMethod with session handling and header management for the CapaOne API.
+    .PARAMETER Path
+    API path to invoke.
+    .PARAMETER Session
+    Web request session with authentication cookies.
+    .PARAMETER Domain
+    Base API domain.
+    .PARAMETER Method
+    HTTP method to use for the request.
+    .PARAMETER Payload
+    Hashtable representing the request body.
+    .PARAMETER Query
+    Hashtable of query string parameters.
+    .EXAMPLE
+    PS> Invoke-CapaOneApi -Path '/organizations/1/device'
+    #>
     [CmdletBinding()]
     param (
         [Parameter(Mandatory)]

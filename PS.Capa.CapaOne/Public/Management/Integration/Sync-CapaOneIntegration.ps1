@@ -1,4 +1,14 @@
 function Sync-CapaOneIntegration {
+    <#
+    .SYNOPSIS
+    Triggers synchronization for a CapaOne integration.
+    .DESCRIPTION
+    Initiates a sync for the specified integration ID and returns success status.
+    .PARAMETER IntegrationId
+    Identifier of the integration to sync.
+    .EXAMPLE
+    PS> Sync-CapaOneIntegration -IntegrationId 5
+    #>
     [CmdletBinding()]
     param (
         [Parameter()]

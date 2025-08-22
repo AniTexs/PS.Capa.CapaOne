@@ -1,4 +1,14 @@
 function Get-CapaOneDeviceInventory {
+    <#
+    .SYNOPSIS
+    Retrieves inventory details for a device.
+    .DESCRIPTION
+    Returns security, software, hardware, and driver information for the specified device ID.
+    .PARAMETER DeviceId
+    Identifier of the device.
+    .EXAMPLE
+    PS> Get-CapaOneDeviceInventory -DeviceId 123
+    #>
     [CmdletBinding()]
     param (
         [Parameter(Mandatory)]

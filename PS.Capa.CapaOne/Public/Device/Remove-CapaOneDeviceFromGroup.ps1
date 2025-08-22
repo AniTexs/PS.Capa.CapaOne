@@ -1,4 +1,16 @@
 function Remove-CapaOneDeviceFromGroup {
+    <#
+    .SYNOPSIS
+    Removes devices from a CapaOne group.
+    .DESCRIPTION
+    Unassigns one or more devices from the specified group.
+    .PARAMETER GroupId
+    Identifier of the group.
+    .PARAMETER DeviceId
+    One or more device identifiers to remove.
+    .EXAMPLE
+    PS> Remove-CapaOneDeviceFromGroup -GroupId 10 -DeviceId 1,2
+    #>
     [CmdletBinding()]
     param (
         [Parameter(Mandatory)]

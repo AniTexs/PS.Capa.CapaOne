@@ -1,4 +1,16 @@
 function New-CapaOneGroup {
+    <#
+    .SYNOPSIS
+    Creates a new CapaOne group.
+    .DESCRIPTION
+    Adds a group with the specified name and optional description.
+    .PARAMETER Name
+    Name of the new group.
+    .PARAMETER Description
+    Optional description for the group.
+    .EXAMPLE
+    PS> New-CapaOneGroup -Name "HR"
+    #>
     [CmdletBinding()]
     param (
         [ValidateNotNullOrWhiteSpace()]
