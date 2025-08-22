@@ -22,13 +22,6 @@ jobs:
         with:
           fetch-depth: 0
 
-      # Optional but nice when debugging path issues
-      - name: Show workspace
-        shell: pwsh
-        run: |
-          Get-Location
-          Get-ChildItem -Recurse -Depth 2 | Select-Object FullName
-
       - name: Publish to PowerShell Gallery
         env:
           APIKEY: ${{ secrets.PSGALLERY_APIKEY }}
