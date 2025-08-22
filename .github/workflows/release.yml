@@ -3,31 +3,35 @@ run-name: ${{ github.actor }} is releasing PS.Capa.CapaOne
 
 on:
   push:
-    branches:
-      - main
+    branches: [ main ]
     paths:
       - "PS.Capa.CapaOne/**"
+      #- ".github/workflows/**"
   workflow_dispatch:
-
 
 jobs:
   release:
+    runs-on: windows-latest
     permissions:
       contents: write
       pull-requests: write
       issues: write
-    runs-on: windows-latest
     steps:
-      - name: Publish to PowerShell Gallery
-        env:
-          APIKEY : ${{ secrets.PSGALLERY_APIKEY }}
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      # Optional but nice when debugging path issues
+      - name: Show workspace
         shell: pwsh
         run: |
-          .\Publish-Module.ps1
+          Get-Location
+          Get-ChildItem -Recurse -Depth 2 | Select-Object FullName
 
-      #- name: Publish PowerShell Module
-      #  uses: natescherer/publish-powershell-action@v1
-      #  with:
-      #    token: ${{ secrets.PSGALLERY_APIKEY }}
-      #    target: gallery
-      #    path: PS.Capa.CapaOne
+      - name: Publish to PowerShell Gallery
+        env:
+          APIKEY: ${{ secrets.PSGALLERY_APIKEY }}
+        shell: pwsh
+        run: |
+          ./Publish-Module.ps1
