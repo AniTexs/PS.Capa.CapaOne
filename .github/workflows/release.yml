@@ -1,0 +1,26 @@
+name: Semantic Release and publish to PowerShell Gallery
+run-name: ${{ github.actor }} is automatically releasing 🚀
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "PS.Capa.CapaOne/**"
+  workflow_dispatch:
+
+
+jobs:
+  release:
+    permissions:
+      contents: write
+      pull-requests: write
+      issues: write
+    runs-on: windows-latest
+    steps:
+      - name: Publish to PowerShell Gallery
+        env:
+          APIKEY : ${{ secrets.PSGALLERY }}
+        shell: pwsh
+        run: |
+          .\Publish.ps1

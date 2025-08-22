@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Types>
+  <!-- Group entity returned by CapaSystems REST API -->
+  <Type>
+    <Name>Capa.CapaOne.Group</Name>
+    <Members>
+      <!-- Default properties shown when the object is formatted in a table or list -->
+      <PropertySet>
+        <Name>DefaultDisplayPropertySet</Name>
+        <ReferencedProperties>
+          <Name>id</Name>
+          <Name>name</Name>
+          <Name>orgId</Name>
+          <Name>description</Name>
+          <Name>createdAt</Name>
+          <Name>updatedAt</Name>
+        </ReferencedProperties>
+      </PropertySet>
+    </Members>
+  </Type>
+  <Type>
+    <Name>Capa.CapaOne.Organization</Name>
+    <Members>
+      <!-- Default properties shown when the object is formatted in a table or list -->
+      <PropertySet>
+        <Name>DefaultDisplayPropertySet</Name>
+        <ReferencedProperties>
+          <Name>id</Name>
+          <Name>name</Name>
+        </ReferencedProperties>
+      </PropertySet>
+    </Members>
+  </Type>
+
+  <!-- Device entity returned by CapaSystems REST API -->
+  <Type>
+    <!-- Give the device objects a custom, friendly type name in your code (e.g.
+    $obj.PSObject.TypeNames.Insert(0,'CapaSystems.Device')) -->
+    <Name>Capa.CapaOne.Device</Name>
+    <Members>
+      <PropertySet>
+        <Name>DefaultDisplayPropertySet</Name>
+        <ReferencedProperties>
+          <Name>Id</Name>
+          <Name>name</Name>
+          <Name>Shitty</Name>
+          <Name>deviceType</Name>
+          <Name>osName</Name>
+          <Name>platform</Name>
+          <Name>online</Name>
+          <Name>state</Name>
+          <Name>lastCheckIn</Name>
+          <Name>agentVersion</Name>
+        </ReferencedProperties>
+      </PropertySet>
+      <ScriptMethod>
+        <Name>GetGroups</Name>
+        <Script>
+          $this | Get-CapaOneDeviceGroup
+        </Script>
+      </ScriptMethod>
+    </Members>
+  </Type>
+</Types>
