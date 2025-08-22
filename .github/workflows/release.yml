@@ -18,16 +18,16 @@ jobs:
       issues: write
     runs-on: windows-latest
     steps:
-      #- name: Publish to PowerShell Gallery
-      #  env:
-      #    APIKEY : ${{ secrets.PSGALLERY_APIKEY }}
-      #  shell: pwsh
-      #  run: |
-      #    .\Publish-Module.ps1
+      - name: Publish to PowerShell Gallery
+        env:
+          APIKEY : ${{ secrets.PSGALLERY_APIKEY }}
+        shell: pwsh
+        run: |
+          .\Publish-Module.ps1
 
-      - name: Publish PowerShell Module
-        uses: natescherer/publish-powershell-action@v1
-        with:
-          token: ${{ secrets.PSGALLERY_APIKEY }}
-          target: gallery
-          path: PS.Capa.CapaOne
+      #- name: Publish PowerShell Module
+      #  uses: natescherer/publish-powershell-action@v1
+      #  with:
+      #    token: ${{ secrets.PSGALLERY_APIKEY }}
+      #    target: gallery
+      #    path: PS.Capa.CapaOne
