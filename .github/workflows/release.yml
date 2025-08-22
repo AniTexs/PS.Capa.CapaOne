@@ -1,5 +1,5 @@
-name: Semantic Release and publish to PowerShell Gallery
-run-name: ${{ github.actor }} is automatically releasing 🚀
+name: Publish to PowerShell Gallery
+run-name: ${{ github.actor }} is releasing PS.Capa.CapaOne
 
 on:
   push:
@@ -20,7 +20,7 @@ jobs:
     steps:
       - name: Publish to PowerShell Gallery
         env:
-          APIKEY : ${{ secrets.PSGALLERY }}
+          APIKEY : ${{ secrets.PSGALLERY_APIKEY }}
         shell: pwsh
         run: |
-          .\Publish.ps1
+          .\Publish-Module.ps1
