@@ -1,6 +1,16 @@
 [![PSScriptAnalyzer](https://github.com/AniTexs/PS.Capa.CapaOne/actions/workflows/powershell.yml/badge.svg)](https://github.com/AniTexs/PS.Capa.CapaOne/actions/workflows/powershell.yml)
 [![Publish to PowerShell Gallery](https://github.com/AniTexs/PS.Capa.CapaOne/actions/workflows/release.yml/badge.svg)](https://github.com/AniTexs/PS.Capa.CapaOne/actions/workflows/release.yml)
 
+# Disclaimer: Unofficial API Usage
+This module interacts with internal or undocumented APIs from CapaOne that are not officially supported by the vendor.
+
+
+What this means:
+
+- These APIs are not publicly documented and may change or be removed without notice.
+- There is no guarantee of stability or support from CapaOne.
+- Use of this module is at your own risk, especially in production environments.
+
 
 # Introduction
 This Powershell Module provides a programmatic way to interact with CapaOne.
